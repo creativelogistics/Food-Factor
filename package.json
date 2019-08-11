@@ -1,0 +1,49 @@
+{
+  "name": "food-facts",
+  "version": "1.0.0",
+  "description": "facts about food",
+  "main": "webpack.config.js",
+  "scripts": {
+    "react-dev": "webpack -d --watch",
+    "start": "node ./server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativelogistics/food-facts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/creativelogistics/food-facts/issues"
+  },
+  "homepage": "https://github.com/creativelogistics/food-facts#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body": "^5.1.0",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "morgan": "^1.9.1",
+    "parser": "^0.1.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "twilio": "^3.33.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.15.1",
+    "node": "^11.11.0",
+    "style-loader": "^0.23.1",
+    "underscore": "^1.9.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.4"
+  }
+}

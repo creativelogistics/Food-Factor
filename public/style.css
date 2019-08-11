@@ -1,0 +1,25 @@
+.images {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    overflow: hidden 110%;
+}
+.display{
+    display: flex ;
+}
+.img{
+    width: 100px;
+    height: 100px;
+}
+.main{
+    align: auto 0;
+}
+.form{
+    margin-top: 400px;
+}
+.button{
+    width: 50px;
+    height:10px;
+    color: red;
+    border: solid 5px black;
+}
