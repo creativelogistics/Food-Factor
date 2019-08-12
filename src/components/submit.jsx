@@ -14,21 +14,19 @@ class Submit extends React.Component {
         }
     }
     sendMessage () {
-      //axios post 
-      config.token 
-      config.AccountSid
-      client.calls.create({
-          url:
-          to: this.state.recipent,
-          from: +14153017919,
-      }, (err,result) => {
-          if (err) {
-              console.log(error)
-          }
-          else {
-              console.log(result)
-          }
-      })
+      
+    //   client.calls.create({
+    //       url:
+    //       to: this.state.recipent,
+    //       from: +14153017919,
+    //   }, (err,result) => {
+    //       if (err) {
+    //           console.log(error)
+    //       }
+    //       else {
+    //           console.log(result)
+    //       }
+    //   })
     }
 
     render(){
@@ -39,7 +37,7 @@ class Submit extends React.Component {
              <label>friends name </label>
              <input type='text'></input><br></br>
              <label>send robo call</label>
-             <button className='button'></button>
+             <button onClick ={} className='button'></button>
          </form>
      )
     }
