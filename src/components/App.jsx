@@ -1,5 +1,6 @@
 import React from  'react';
-import Submit from './submit.jsx'
+import Submit from './submit.jsx';
+import MostRecent from './MostRecent.jsx';
 
 class App extends React.Component  {
     constructor (props ){
@@ -43,10 +44,10 @@ class App extends React.Component  {
         }
     }
     render () {
-        renderView  = () => {
-            if (this.state.mostRecent) {
-                return(
-                    < MostRecent>
+        renderViews  = () => {
+            if (this.state.mostRecent){
+                return (
+                    <Submit />
                 )
             }else {
                 return(
@@ -68,28 +69,14 @@ class App extends React.Component  {
                         </div>  
                         <Submit/>  
                     </div>
-              
-
                 )
             }
-        }
 
-        return (<div className='main' >
-            <h1>Robo call Food classification to your friends</h1>
-            <div className='display'>
-            {this.state.images.map( (image,index) =>(
-                <div onClick= { () => console.log('changeStyle')}key= {index} className='images'>
-                    <img id = {index} className= 'img' src={image.url}></img>
-                    <p>{image.title}</p>
-                </div>
-            ))}
-            </div>  
-            <Submit/>  
-        </div>
-          
-        )
-
-    }
-        
+            }
+            return (
+            <p>rer</p>
+            )
+        }   
 }
+
 export default App;
