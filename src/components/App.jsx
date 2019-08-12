@@ -38,10 +38,19 @@ class App extends React.Component  {
          saladIs: ['potupurri'],
          sliceOfPie: ['taco'],
          bigMacIs: ['lasagna'],
-         messagesSent: 0 ,         
+         messagesSent: 0 , 
+         mostRecent: false        
         }
     }
     render () {
+        renderView () => {
+            if (this.state.mostRecent){
+                return(
+                    < MostRecent
+                )
+            }
+        }
+
         return (<div className='main' >
             <h1>Robo call Food classification to your friends</h1>
             <div className='display'>
