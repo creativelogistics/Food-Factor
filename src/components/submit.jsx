@@ -33,13 +33,13 @@ class Submit extends React.Component {
     
     render(){
      return(
-         <form className='form'>
+         <form onClick ={console.log(this.props.message)} className='form'>
              <label>your name </label>
              <input className='user' onChange={this.inputHandler} type='text'></input><br></br>
              <label>friends name </label>
              <input className='recipient' onChange={this.inputHandler} type='text'></input><br></br>
              <label>send robo call</label>
-             <button onClick ={console.log(this.props.message)} className='button'></button>
+             <button  className='button'></button>
          </form>
      )
     }

@@ -1,6 +1,7 @@
 import React from  'react';
 import Submit from './submit.jsx';
 import MostRecent from './MostRecent.jsx';
+import axios from 'axios';
 
 class App extends React.Component  {
     constructor (props ){
@@ -35,26 +36,31 @@ class App extends React.Component  {
          mostRecent: false,  
          mostRecentSms: []      
         }
+        this.messageHandler = this.messageHandler.bind(this);
       
     }
     componentDidMount() {
-        // axios.get('/mostRecent')
-        //     .then(function (response) {
-        //         // handle success
-        //         console.log(response);
-        //     })
-        //     .catch(function (error) {
-        //         // handle error
-        //         console.log(error);
-        //     })
-        //     .finally(function () {
-        //         this.setState({
-        //             MostRecent: ['recent','recent'],
-        //         })
-        //     });
+        axios.get('/mostRecent')
+            .then(function (response) {
+                // handle success
+                console.log(response);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .finally(function () {
+                this.setState({
+                    MostRecent: ['recent','recent'],
+                })
+            });
     }
 
-    messageHandler () {
+    messageHandler (key) {
+    let text = this.state.images[key].title[0];
+    this.setState({
+        message: text
+    })
 
     }
     render () {
@@ -71,7 +77,7 @@ class App extends React.Component  {
                           <h1>Robo call Food classification to your friends</h1>
                           <div className='display'>
                             {this.state.images.map( (image,index) =>(
-                              <div onClick= { () => console.log('changeStyle')}
+                              <div onClick = {() => this.messageHandler(index)}
                               key= {index} 
                               className='images'>
                                 <img id = {index} 
@@ -82,7 +88,7 @@ class App extends React.Component  {
                               </div>
                             ))}
                         </div>  
-                        <Submit/>  
+                        <Submit message ={this.state.message}/>  
                     </div>
                 )
             }

@@ -3,15 +3,18 @@ const server = express();
 const bodyParser = require('body-parser');
 const morgan  = require('morgan');
 const port = 3000 ;
-
-const client = require('twilio')(accountSid, authToken);
+const config = require('../twilio.config.js')
+//const client = require('twilio')(config.accountSid, config.token);
 server.use(bodyParser());
 server.use(morgan());
 
 server.use(express.static('public'))
 server.get('/mostRecent',(req,res) => {
-    
 console.log('hit')
+})
+
+server.post('/send',(req,res) => {
+    console.log(req.body.message)
 // client.messages
 //   .create({
 //      body: `${req.body.message}`,
