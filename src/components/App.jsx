@@ -88,12 +88,10 @@ class App extends React.Component  {
                     </div>
                 )
             }
-
-            
-            return (
+        } 
+        return (
             <p>rer</p>
-            )
-        }   
+            )  
 }
 
 export default App;
