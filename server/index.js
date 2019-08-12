@@ -11,14 +11,14 @@ server.use(morgan());
 server.use(express.static('public'))
 server.get('/mostRecent',(req,res) => {
     
-
-client.messages
-  .create({
-     body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
-     from: '+15017122661',
-     to: '+15558675310'
-   })
-  .then(message => console.log(message.sid));
+console.log('hit')
+// client.messages
+//   .create({
+//      body: `${req.body.message}`,
+//      from: '+14153017919',
+//      to: `${req.body.recipient}`
+//    })
+//   .then(message => console.log(message.sid));
 
 })
 server.listen(port , () => console.log(`listening on port ${port}!`));
