@@ -1,5 +1,6 @@
 import React from  'react';
-import Submit from './submit.jsx'
+import Submit from './submit.jsx';
+import MostRecent from './MostRecent.jsx';
 
 class App extends React.Component  {
     constructor (props ){
@@ -38,26 +39,61 @@ class App extends React.Component  {
          saladIs: ['potupurri'],
          sliceOfPie: ['taco'],
          bigMacIs: ['lasagna'],
-         messagesSent: 0 ,         
+         messagesSent: 0 , 
+         mostRecent: false,  
+         mostRecentSms: []      
         }
     }
-    render () {
-        return (<div className='main' >
-            <h1>Robo call Food classification to your friends</h1>
-            <div className='display'>
-            {this.state.images.map( (image,index) =>(
-                <div onClick= { () => console.log('changeStyle')}key= {index} className='images'>
-                    <img id = {index} className= 'img' src={image.url}></img>
-                    <p>{image.title}</p>
-                </div>
-            ))}
-            </div>  
-            <Submit/>  
-        </div>
-          
-        )
-
+    componentDidMount() {
+        axios.get('/mostRecent')
+            .then(function (response) {
+                // handle success
+                console.log(response);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .finally(function () {
+                this.setState({
+                    MostRecent: ['recent','recent'],
+                })
+            });
     }
-        
+    render () {
+        renderViews  = () => {
+            if (this.state.mostRecent){
+                return (
+                    <MostRecent mostRecent={this.state.mostRecent} />
+                )
+            }else {
+                return(
+                    <div className='main' >
+                        <div className="recent">Most Recent</div>
+                          <h1>Robo call Food classification to your friends</h1>
+                          <div className='display'>
+                            {this.state.images.map( (image,index) =>(
+                              <div onClick= { () => console.log('changeStyle')}
+                              key= {index} 
+                              className='images'>
+                                <img id = {index} 
+                                className= 'img' 
+                                src={image.url}>
+                                </img>
+                                <p>{image.title}</p>
+                              </div>
+                            ))}
+                        </div>  
+                        <Submit/>  
+                    </div>
+                )
+            }
+
+            
+            return (
+            <p>rer</p>
+            )
+        }   
 }
+
 export default App;
