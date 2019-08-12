@@ -14,19 +14,9 @@ class Submit extends React.Component {
         }
     }
     sendMessage () {
-      
-    //   client.calls.create({
-    //       url:
-    //       to: this.state.recipent,
-    //       from: +14153017919,
-    //   }, (err,result) => {
-    //       if (err) {
-    //           console.log(error)
-    //       }
-    //       else {
-    //           console.log(result)
-    //       }
-    //   })
+        axios.post('/sms', ({
+        
+        }))
     }
 
     render(){
