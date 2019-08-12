@@ -40,14 +40,31 @@ class App extends React.Component  {
          sliceOfPie: ['taco'],
          bigMacIs: ['lasagna'],
          messagesSent: 0 , 
-         mostRecent: false        
+         mostRecent: false,  
+         mostRecentSms: []      
         }
+    }
+    componentDidMount() {
+        axios.get('/mostRecent')
+            .then(function (response) {
+                // handle success
+                console.log(response);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .finally(function () {
+                this.setState({
+                    MostRecent: ['recent','recent'],
+                })
+            });
     }
     render () {
         renderViews  = () => {
             if (this.state.mostRecent){
                 return (
-                    <Submit />
+                    <MostRecent mostRecent={this.state.mostRecent} />
                 )
             }else {
                 return(
