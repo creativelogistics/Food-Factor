@@ -92,6 +92,6 @@ class App extends React.Component  {
         return (
             <p>rer</p>
             )  
+  }
 }
-
 export default App;
