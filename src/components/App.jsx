@@ -43,10 +43,33 @@ class App extends React.Component  {
         }
     }
     render () {
-        renderView () => {
-            if (this.state.mostRecent){
+        renderView  = () => {
+            if (this.state.mostRecent) {
                 return(
-                    < MostRecent
+                    < MostRecent>
+                )
+            }else {
+                return(
+                    <div className='main' >
+                        <div className="recent">Most Recent</div>
+                        <h1>Robo call Food classification to your friends</h1>
+                        <div className='display'>
+                            {this.state.images.map( (image,index) =>(
+                                <div onClick= { () => console.log('changeStyle')}
+                                key= {index} 
+                                className='images'>
+                                    <img id = {index} 
+                                    className= 'img' 
+                                    src={image.url}>
+                                    </img>
+                                    <p>{image.title}</p>
+                                </div>
+                            ))}
+                        </div>  
+                        <Submit/>  
+                    </div>
+              
+
                 )
             }
         }
