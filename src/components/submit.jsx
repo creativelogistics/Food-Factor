@@ -1,7 +1,4 @@
 import React from 'react';
-import config from '../../twilio.config';
-
-const client = require('twilio')(config.AccountSid,config.token);
 
 class Submit extends React.Component {
     constructor (props) {
@@ -9,26 +6,38 @@ class Submit extends React.Component {
         this.state = {
         user: '',
         recipient: '',
-        message: '',
+        
 
         }
         this.sendMessage = this.sendMessage.bind(this);
+        this.inputHandler = this.inputHandler.bind(this);
     }
     sendMessage () {
       axios.post('/sms',{
           recipent: this.state.recipient,
           message: this.props.message,
+
       })
     }
+    inputHandler(e) {
+    console.log(e.target.className);
+    console.log(e.target.value);
+    console.log(this.state.recipient)
+    let key = e.target.className;
+    let value = e.target.value
+    this.setState({
+        [key]: value
+     })
 
+    }
     
     render(){
      return(
          <form className='form'>
              <label>your name </label>
-             <input type='text'></input><br></br>
+             <input className='user' onChange={this.inputHandler} type='text'></input><br></br>
              <label>friends name </label>
-             <input type='text'></input><br></br>
+             <input className='recipient' onChange={this.inputHandler} type='text'></input><br></br>
              <label>send robo call</label>
              <button onClick ={console.log(this.props.message)} className='button'></button>
          </form>
