@@ -1,19 +1,19 @@
 import React from 'react';
 
-class MostRecent extends React.Component{
+class MostRecent extends React.Component {
     constructor (props){
         super (props)
         this.state= {
-            mostRecent: [],
         }
     }
- 
     render () {
       return(
         <div>
-          {this.state.mostRecent.map((item)(
+          {this.props.mostRecent.map((item)(
+            <p>item</p>
         ))}
         </div>
         )
     }
 }
+export default MostRecent;
