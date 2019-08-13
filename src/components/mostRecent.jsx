@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment'
 
 class MostRecent extends React.Component {
     constructor (props){
@@ -9,9 +10,16 @@ class MostRecent extends React.Component {
     render () {
       return(
         <div>
-          {this.props.mostRecent.map((item)(
-            <p>item</p>
-        ))}
+
+          <h1>Most Recent messages</h1>
+          {this.props.recent.map( (item) =>(
+            <div className='recent '>
+
+              <div>{moment(item.date).format("MMM Do YY")}</div>
+              <div>{item.user}</div>
+              <div>{item.message}</div>
+            </div>
+      ))}
         </div>
         )
     }
