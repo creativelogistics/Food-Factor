@@ -3,7 +3,7 @@ const server = express();
 const bodyParser = require('body-parser');
 const morgan  = require('morgan');
 const port = 3000 ;
-const config = require('../twilio.config.js')
+const config = require('../twilio.js')
 
 const Message = require('../db/schema.js')
 const client = require('twilio')(config.accountSid, config.token);
