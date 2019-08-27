@@ -17,8 +17,7 @@ server.use(express.static('public'))
 server.get('/mostRecent', (req,res) => {
   let hey = Message.find({}).limit(10).sort('-date');
   hey.exec((err,result)=>{
-    console.log('result',result)
-    res.send(result)
+    res.status(200).send(result)
   })
 })
 
