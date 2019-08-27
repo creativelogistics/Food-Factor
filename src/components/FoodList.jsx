@@ -39,17 +39,17 @@ class FoodList extends React.Component  {
          mostRecentSms: []      
         }
         this.setFood = this.setFood.bind(this);
-        this.messageHandler = this.messageHandler.bind(this);
+        //this.messageHandler = this.messageHandler.bind(this);
        
     }
    
-    messageHandler (key) {
-    let text = this.state.images[key].title[0];
-    console.log('messge',text)
-    this.setState({
-        message: text
-    })
-    }
+    // messageHandler (key) {
+    // let text = this.state.images[key].title[0];
+    // console.log('messge',text)
+    // this.setState({
+    //     message: text
+    // })
+    // }
     setFood(index){
       console.log('hheheheh')
       this.setState({

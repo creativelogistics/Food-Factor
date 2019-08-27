@@ -10,16 +10,26 @@ class FoodItem extends React.Component  {
         messagesSent: 0 , 
         recentlist: [],
         mostRecent: false,  
-        mostRecentSms: []      
+        mostRecentSms: []  ,
+        foodIndex: '',
         }  
+        this.foodindex = this.foodindex.bind(this);
+    }
+    foodindex(index){
+      console.log(this.state.foodIndex,'foodindesx')
+      this.setState({
+        foodIndex: index
+      })
     }
     render () {
+      
     return (          
       <div 
       onClick={ () => this.props.messageHandler(this.props.image.title[0])} 
       id={this.props.id}
       >  <div className ='foodItem'>
-        <img
+        <img onClick={() => this.foodindex(this.props.id)}
+        style={this.state.foodIndex === this.props.id ? {border: '7px solid red'}: null}
         className="img" 
         src= {this.props.image.url}
         />

@@ -32,21 +32,18 @@ class App extends React.Component  {
                 // handle error
                 console.log(error);
             })
-           
     }
     mostRecent(){
         console.log('clcik',this.state.recentlist)
-       
         this.setState({
             mostRecent: true,
         })
     }
     messageHandler (title) {
-
+        console.log(this.state.message,'ee')
     this.setState({
         message: title
     })
-
     }
     render () {
         const renderView = () => {
