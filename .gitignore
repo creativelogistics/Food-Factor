@@ -1,2 +1,4 @@
 # NodeJS specific #
 node_modules/
+
+twilio.config.js
